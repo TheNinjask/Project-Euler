@@ -41,7 +41,7 @@ while True:
         result = inc # for feedback
         count += 1
         if count == stop:
-            result = bag.pop()
+            result = bag.pop() ### P.S. ???
             break
     inc += 1
 # END CODE
