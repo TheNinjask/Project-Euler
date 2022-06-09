@@ -8,7 +8,7 @@ import pt.theninjask.externalconsole.event.ExternalConsoleClosingEvent;
 public class App {
 
 	public static void main(String[] args) {
-		//ExternalConsole.setSystemStreams();
+		ExternalConsole.setSystemStreams();
 		ExternalConsole.registerEventListener(new Object() {
 			@Handler
 			public void onClose(ExternalConsoleClosingEvent event) {
