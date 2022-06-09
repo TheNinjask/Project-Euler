@@ -1,8 +1,7 @@
 from os import system
 from time import sleep, time
 from threading import Thread
-from math import sqrt, ceil
-
+from math import sqrt, ceil, floor
 global doLoad
 global result 
 start_time = time()
@@ -26,21 +25,37 @@ thready = Thread(target=loading, args=[start_time])
 thready.start()
 class Found(Exception): pass
 # START CODE
-a = 0
-b = 0
-c = 0
-try:
-    for partb in range(2, 1000):
-        for parta in range(1, partb-1):
-            partc = sqrt(parta**2 + partb**2)
-            if parta+partb+partc==1000:
-                a = parta
-                b = partb
-                c = partc
-                raise Found
-except Found:
-    pass
-result = a * b * c
+def isPrime(number, primes=[]):
+    if number==1:
+        return [False, primes]
+    elif number<4:
+        primes.append(number)
+        return [True, primes]
+    elif number%2==0:
+        return [False, primes]
+    elif number<9:
+        primes.append(number)
+        return [True, primes]
+    elif number%3==0:
+        return [False, primes]
+    else:
+        r=floor( sqrt(number) )
+        f=5
+        while f<=r:
+            if number % f ==0:
+                return [False, primes]
+            if number%(f+2)==0:
+                return [False, primes]
+            f=f+6
+        primes.append(number)
+        return [True, primes]
+target = 2000000
+result = 0
+calc = [None, []]
+for elem in range(2, target):
+    calc = isPrime(elem, calc[1])
+    if calc[0]:
+        result += elem
 # END CODE
 doLoad=False
 thready.join()

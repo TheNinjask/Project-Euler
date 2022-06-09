@@ -1,7 +1,10 @@
+import re
+import math
 from os import system
 from time import sleep, time
 from threading import Thread
-from math import sqrt, ceil
+from math import sqrt, ceil, floor
+from typing import List
 
 global doLoad
 global result 
@@ -23,24 +26,27 @@ def loading(start_time=time()):
         sleep(0.1)    
 
 thready = Thread(target=loading, args=[start_time])
-thready.start()
 class Found(Exception): pass
+def str2Vec(data:str, count_first_line:bool=False)->List[int]:
+  if not count_first_line:
+      data = data[1:]
+  return list(map(lambda x: int(x),re.findall(r'\d\d\w?', data)))  
+thready.start()
 # START CODE
-a = 0
-b = 0
-c = 0
-try:
-    for partb in range(2, 1000):
-        for parta in range(1, partb-1):
-            partc = sqrt(parta**2 + partb**2)
-            if parta+partb+partc==1000:
-                a = parta
-                b = partb
-                c = partc
-                raise Found
-except Found:
-    pass
-result = a * b * c
+minimum:int = 500
+amount = 0
+result = 0
+def nTriangle(n:int):
+    return int(n*(n+1)/2)
+
+while amount <= minimum:
+    result += 1
+    amount = 0
+    factor = nTriangle(result)
+    for x in reversed(range(1, (int)(math.sqrt(factor)))):
+        if(factor%x) == 0:
+            amount += 1
+
 # END CODE
 doLoad=False
 thready.join()
