@@ -36,6 +36,16 @@
 					<include>**/*.cer</include>
 					<include>**/*.png</include>
 					<include>**/*.gif</include>
+					<include>**/*.txt</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**/*.cer</include>
+					<include>**/*.png</include>
+					<include>**/*.gif</include>
+					<include>**/*.txt</include>
 				</includes>
 			</resource>
 		</resources>

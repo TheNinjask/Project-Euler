@@ -35,4 +35,6 @@ The problems range in difficulty and for many the experience is inductive chain 
 * [10: Summation of primes](./Java/src/main/java/projecteuler/problem/Problem10.java)
 * [11: Largest product in a grid](./Java/src/main/java/projecteuler/problem/Problem11.java)
 * [12: Highly divisible triangular number](./Java/src/main/java/projecteuler/problem/Problem12.java)
+* [13: Large sum](./Java/src/main/java/projecteuler/problem/Problem13.java)
+* [14: Longest Collatz sequence](./Java/src/main/java/projecteuler/problem/Problem14.java)
 * [N: Problem](./Java/src/main/java/projecteuler/problem/ProblemN.java)

@@ -8,7 +8,7 @@ import pt.theninjask.externalconsole.event.ExternalConsoleClosingEvent;
 public class App {
 
 	public static void main(String[] args) {
-		ExternalConsole.setSystemStreams();
+		//ExternalConsole.setSystemStreams();
 		ExternalConsole.registerEventListener(new Object() {
 			@Handler
 			public void onClose(ExternalConsoleClosingEvent event) {
@@ -32,6 +32,8 @@ public class App {
 		ExternalConsole.addCommand(new Problem10());
 		ExternalConsole.addCommand(new Problem11());
 		ExternalConsole.addCommand(new Problem12());
+		ExternalConsole.addCommand(new Problem13());
+		ExternalConsole.addCommand(new Problem14());
 	}
 
 }
