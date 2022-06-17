@@ -40,4 +40,7 @@ The problems range in difficulty and for many the experience is inductive chain 
 * [15: Lattice paths](./Java/src/main/java/projecteuler/problem/Problem15.java)
 * [16: Power digit sum](./Java/src/main/java/projecteuler/problem/Problem16.java)
 * [17: Number letter counts](./Java/src/main/java/projecteuler/problem/Problem17.java)
+* [18: Maximum path sum I](./Java/src/main/java/projecteuler/problem/Problem18.java)
+* [19: Counting Sundays](./Java/src/main/java/projecteuler/problem/Problem19.java)
+* [20: Factorial digit sum](./Java/src/main/java/projecteuler/problem/Problem20.java)
 * [N: Problem](./Java/src/main/java/projecteuler/problem/ProblemN.java)

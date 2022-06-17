@@ -37,6 +37,9 @@ public class App {
 		ExternalConsole.addCommand(new Problem15());
 		ExternalConsole.addCommand(new Problem16());
 		ExternalConsole.addCommand(new Problem17());
+		ExternalConsole.addCommand(new Problem18());
+		ExternalConsole.addCommand(new Problem19());
+		ExternalConsole.addCommand(new Problem20());
 	}
 
 }
