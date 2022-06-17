@@ -31,7 +31,7 @@ public class ProblemUtils {
 	
 	private static void printProgress(Problem problem, long start, Object[] loading, int i) {
 		ExternalConsole.executeCommand("cls");
-		String msg = String.format("Loading %s Time Elapsed: %ss Hypothesis: %s", loading[i],
+		String msg = String.format("Loading %s\nTime Elapsed: %ss\nHypothesis: %s", loading[i],
 				(System.currentTimeMillis() - start) / 1000, problem.getResult());
 		ExternalConsole.println(msg);
 	}
