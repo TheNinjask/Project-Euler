@@ -43,4 +43,5 @@ The problems range in difficulty and for many the experience is inductive chain 
 * [18: Maximum path sum I](./Java/src/main/java/projecteuler/problem/Problem18.java)
 * [19: Counting Sundays](./Java/src/main/java/projecteuler/problem/Problem19.java)
 * [20: Factorial digit sum](./Java/src/main/java/projecteuler/problem/Problem20.java)
+* [21: Amicable numbers](./Java/src/main/java/projecteuler/problem/Problem21.java)
 * [N: Problem](./Java/src/main/java/projecteuler/problem/ProblemN.java)
