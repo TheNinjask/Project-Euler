@@ -14,6 +14,7 @@ public class App {
 
 	public static void main(String[] args) {
 		// ExternalConsole.setSystemStreams();
+		ExternalConsole.setConsoleTitle("Project Euler's Console");
 		ExternalConsole.registerEventListener(new Object() {
 			@Handler
 			public void onClose(ExternalConsoleClosingEvent event) {

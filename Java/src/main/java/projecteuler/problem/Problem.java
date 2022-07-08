@@ -13,4 +13,8 @@ public interface Problem extends ExternalConsoleCommand{
 	
 	public Runnable getSolution();
 	
+	public default Object getLoading() {
+		return null;
+	};
+	
 }

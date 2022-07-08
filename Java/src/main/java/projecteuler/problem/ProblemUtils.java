@@ -1,7 +1,10 @@
 package projecteuler.problem;
 
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
+
 import pt.theninjask.externalconsole.console.ExternalConsole;
-import pt.theninjask.externalconsole.console.LoadingProcess;
+import pt.theninjask.externalconsole.console.util.LoadingProcess;
 
 public class ProblemUtils {
 
@@ -24,6 +27,8 @@ public class ProblemUtils {
 				i = ((LoadingProcess) loading[0]).nextLoading(i, loading);
 			}
 			printProgress(problem, start, loading, i);
+			StringSelection selection = new StringSelection(problem.getResult().toString());
+			Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection, selection);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -31,7 +36,8 @@ public class ProblemUtils {
 	
 	private static void printProgress(Problem problem, long start, Object[] loading, int i) {
 		ExternalConsole.executeCommand("cls");
-		String msg = String.format("Loading %s\nTime Elapsed: %ss\nHypothesis: %s", loading[i],
+		Object loader = problem.getLoading()==null ? loading[i] : problem.getLoading();
+		String msg = String.format("Loading %s\nTime Elapsed: %ss\nHypothesis: %s", loader,
 				(System.currentTimeMillis() - start) / 1000, problem.getResult());
 		ExternalConsole.println(msg);
 	}

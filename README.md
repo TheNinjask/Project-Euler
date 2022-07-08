@@ -45,4 +45,5 @@ The problems range in difficulty and for many the experience is inductive chain 
 * [20: Factorial digit sum](./Java/src/main/java/projecteuler/problem/Problem20.java)
 * [21: Amicable numbers](./Java/src/main/java/projecteuler/problem/Problem21.java)
 * [22: Names scores](./Java/src/main/java/projecteuler/problem/Problem22.java)
-* [N: Problem](./Java/src/main/java/projecteuler/problem/ProblemN.java)
+* [23: Non-abundant sums](./Java/src/main/java/projecteuler/problem/Problem23.java)
+* [24: Lexicographic permutations](./Java/src/main/java/projecteuler/problem/Problem24.java)
