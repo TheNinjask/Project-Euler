@@ -1,7 +1,8 @@
 package projecteuler.problem;
 
 import java.math.BigInteger;
-import java.util.stream.IntStream;
+
+import projecteuler.problem.ProblemUtils.Factorial;
 
 public class Problem24 implements Problem {
 
@@ -26,31 +27,34 @@ public class Problem24 implements Problem {
 		return progress;
 	}
 
-	private static final String convertInt(BigInteger i) {
-		String data = i.toString();
-		if (data.length() < 10)
-			data = "0" + data;
-		return data;
+	private static final int factorialToIndex(int factI, String stringy) {
+		return stringy.length() - factI;
 	}
-
-	private boolean legit = true;
 
 	@Override
 	public Runnable getSolution() {
 		return () -> {
 			result = BigInteger.ZERO;
-			BigInteger start = new BigInteger("0123456789");
-			for (int i = 0; i < MILLIONTH; start = start.add(BigInteger.valueOf(9)),progress.updateProgress(i)) {
-				String data = convertInt(start);
-				legit = true;
-				IntStream.range(0,10).forEach(num->{
-					if(data.indexOf(Character.forDigit(num, 10))==-1)
-						legit = false;
-				});
-				if(!legit)
+			String stringy = new StringBuilder("0123456789").reverse().toString();
+			int i = -1;
+			int curr = -1;
+			Factorial fact = new Factorial() {
+			};
+			result = new BigInteger(stringy);
+			for (i = stringy.length(), curr = fact.factorial(i); curr != MILLIONTH && i > 0; i--) {
+				int j = -1;
+				for (j = i; curr >= MILLIONTH && j > 0; curr -= fact.factorial(i - 1), j--) {
+				}
+				j++;
+				curr += fact.factorial(i - 1);
+				int convI = factorialToIndex(i, stringy);
+				int convJ = factorialToIndex(j, stringy);
+				if (convI == convJ)
 					continue;
-				i++;
-				result = start;
+				stringy = new StringBuilder().append(stringy, factorialToIndex(stringy.length(), stringy), convI)
+						.append(stringy.charAt(convJ)).append(stringy.charAt(convI)).append(stringy, convI + 1, convJ)
+						.append(stringy.substring(convJ + 1)).toString();
+				result = new BigInteger(stringy);
 			}
 		};
 	}

@@ -2,6 +2,8 @@ package projecteuler.problem;
 
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
+import java.util.HashMap;
+import java.util.Map;
 
 import pt.theninjask.externalconsole.console.ExternalConsole;
 import pt.theninjask.externalconsole.console.util.LoadingProcess;
@@ -33,13 +35,30 @@ public class ProblemUtils {
 			e.printStackTrace();
 		}
 	}
-	
+
 	private static void printProgress(Problem problem, long start, Object[] loading, int i) {
 		ExternalConsole.executeCommand("cls");
-		Object loader = problem.getLoading()==null ? loading[i] : problem.getLoading();
+		Object loader = problem.getLoading() == null ? loading[i] : problem.getLoading();
 		String msg = String.format("Loading %s\nTime Elapsed: %ss\nHypothesis: %s", loader,
 				(System.currentTimeMillis() - start) / 1000, problem.getResult());
 		ExternalConsole.println(msg);
+	}
+
+	public interface Factorial {
+		
+		public Map<Integer, Integer> cache = new HashMap<>();
+		
+		public default int factorial(int n) {
+			if(n==0)
+				return 1;
+			Integer result = cache.get(n);
+			if(result==null) {
+				result = n*factorial(n-1);
+				cache.put(n, result);
+			}
+			return result;
+		}
+		
 	}
 
 }
