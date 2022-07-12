@@ -47,3 +47,5 @@ The problems range in difficulty and for many the experience is inductive chain 
 * [22: Names scores](./Java/src/main/java/projecteuler/problem/Problem22.java)
 * [23: Non-abundant sums](./Java/src/main/java/projecteuler/problem/Problem23.java)
 * [24: Lexicographic permutations](./Java/src/main/java/projecteuler/problem/Problem24.java)
+* [25: 1000-digit Fibonacci number](./Java/src/main/java/projecteuler/problem/Problem25.java)
+* [26: Reciprocal cycles](./Java/src/main/java/projecteuler/problem/Problem26.java)

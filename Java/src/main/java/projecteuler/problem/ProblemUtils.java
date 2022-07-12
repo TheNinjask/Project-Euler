@@ -46,7 +46,7 @@ public class ProblemUtils {
 
 	public interface Factorial {
 		
-		public Map<Integer, Integer> cache = new HashMap<>();
+		public static final Map<Integer, Integer> cache = new HashMap<>();
 		
 		public default int factorial(int n) {
 			if(n==0)
