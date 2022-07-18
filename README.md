@@ -51,3 +51,5 @@ The problems range in difficulty and for many the experience is inductive chain 
 |24|[Lexicographic permutations](https://projecteuler.net/problem=24)|[Problem24.java](./Java/src/main/java/projecteuler/problem/Problem24.java)|
 |25|[1000-digit Fibonacci number](https://projecteuler.net/problem=25)|[Problem25.java](./Java/src/main/java/projecteuler/problem/Problem25.java)|
 |26|[Reciprocal cycles](https://projecteuler.net/problem=26)|[Problem26.java](./Java/src/main/java/projecteuler/problem/Problem26.java)|
+|27|[Quadratic primes](https://projecteuler.net/problem=27)|[Problem27.java](./Java/src/main/java/projecteuler/problem/Problem27.java)|
+|28|[Number spiral diagonals](https://projecteuler.net/problem=28)|[Problem28.java](./Java/src/main/java/projecteuler/problem/Problem28.java)|

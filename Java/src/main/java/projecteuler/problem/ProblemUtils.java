@@ -19,10 +19,10 @@ public class ProblemUtils {
 	public static void runTimer(Problem problem) {
 		try {
 			Thread proc = new Thread(problem.getSolution());
+			long start = System.currentTimeMillis();
 			proc.start();
 			Object[] loading = loading1;
 			int i = 3;
-			long start = System.currentTimeMillis();
 			while (proc.isAlive()) {
 				printProgress(problem, start, loading, i);
 				proc.join((int) loading[1]);
@@ -39,26 +39,51 @@ public class ProblemUtils {
 	private static void printProgress(Problem problem, long start, Object[] loading, int i) {
 		ExternalConsole.executeCommand("cls");
 		Object loader = problem.getLoading() == null ? loading[i] : problem.getLoading();
-		String msg = String.format("Loading %s\nTime Elapsed: %ss\nHypothesis: %s", loader,
-				(System.currentTimeMillis() - start) / 1000, problem.getResult());
+		long ms = System.currentTimeMillis() - start;
+		String msg = String.format("Loading %s\nTime Elapsed: %ss (%sms)\nHypothesis: %s", loader,
+				ms / 1000, ms ,problem.getResult());
 		ExternalConsole.println(msg);
 	}
 
 	public interface Factorial {
-		
+
 		public static final Map<Integer, Integer> cache = new HashMap<>();
-		
+
 		public default int factorial(int n) {
-			if(n==0)
+			if (n == 0)
 				return 1;
 			Integer result = cache.get(n);
-			if(result==null) {
-				result = n*factorial(n-1);
+			if (result == null) {
+				result = n * factorial(n - 1);
 				cache.put(n, result);
 			}
 			return result;
 		}
-		
+
 	}
 
+	public interface Prime {
+		public default boolean isPrime(long number) {
+			if (number <= 1)
+				return false;
+			else if (number < 4)
+				return true;
+			else if (number % 2 == 0)
+				return false;
+			else if (number < 9)
+				return true;
+			else if (number % 3 == 0)
+				return false;
+			else {
+				double r = Math.floor(Math.sqrt(number));
+				for (double f = 5; f <= r; f += 6) {
+					if (number % f == 0)
+						return false;
+					if (number % (f + 2) == 0)
+						return false;
+				}
+				return true;
+			}
+		}
+	}
 }
