@@ -53,3 +53,5 @@ The problems range in difficulty and for many the experience is inductive chain 
 |26|[Reciprocal cycles](https://projecteuler.net/problem=26)|[Problem26.java](./Java/src/main/java/projecteuler/problem/Problem26.java)|
 |27|[Quadratic primes](https://projecteuler.net/problem=27)|[Problem27.java](./Java/src/main/java/projecteuler/problem/Problem27.java)|
 |28|[Number spiral diagonals](https://projecteuler.net/problem=28)|[Problem28.java](./Java/src/main/java/projecteuler/problem/Problem28.java)|
+|29|[Distinct powers](https://projecteuler.net/problem=29)|[Problem29.java](./Java/src/main/java/projecteuler/problem/Problem29.java)|
+|30|[Digit fifth powers](https://projecteuler.net/problem=30)|[Problem30.java](./Java/src/main/java/projecteuler/problem/Problem30.java)|
